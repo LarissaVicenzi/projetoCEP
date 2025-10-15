@@ -26,5 +26,45 @@ modal.classList.add('flex');
 setTimeout(() => {
     modal.classList.remove('opacity-0');
     modal.classList.add('opacity-100');
-}, 50)
+}, 50);
+
+// Evento do botão da modal para o seu fechamento
+const fecharBtn = document.querySelector('#fecharModal');
+fecharBtn.onclick = () => {
+    modal.classList.add('opacity-0'); //deixando no padrão do HTML - volta ao original
+    modal.classList.remove('opacity-100'); 
+
+    setTimeout(() => {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+}, 300);
+};
+}
+
+// Função para limpar todos os campos do formulário 
+
+export function limparCampos() {
+    // Pegar o formulário 
+    const form = document.querySelector('#enderecoForm');
+
+    // Percorrer o form com um forEach para cada input
+    form.querySelectorAll('input').forEach(input => input.value = '');
+}
+
+// Função para a máscara no CEP 
+
+export function aplicarMascaraCep(inputElement) {
+    // estamos pegando o que foi digitado ou colado no campo de texto
+    // por ser uma entrada, essa função será executada para cada número digitado 
+    inputElement.addEventListener('input', (e) =>{
+
+    // Usando o parâmetro 'e' como target ==> cada um dos números digitados 
+    let value = e.target.replace(/\D/g, '');
+
+    if(value.length > 5){
+        value = value.slice(0, 5) = '-' = value.slice(5, 8);
+    }
+    // atualizando a visualização do elemento input
+    e.target.value = value;
+    })
 }

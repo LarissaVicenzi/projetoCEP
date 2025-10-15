@@ -25,7 +25,7 @@
                     <label for="" class="text-gray-300 mb-1 block">CEP</label>
                     <div class="flex gap-2">
                     <input type="text" name="cep" id="cep" placeholder="Digite o CEP" class="w-full border border-gray-300 rounded px-3 py-2 placeholder:text-gray-500 text-gray-300">
-                    <button class="bg-blue-600 text-gray-300 font-semibold px-4 py-2 rounded hover:bg-blue-800">Buscar</button>
+                    <button class="bg-blue-600 text-gray-300 font-semibold px-4 py-2 rounded hover:bg-blue-800" id="buscarCep">Buscar</button>
                     </div>
                 </div>
 
@@ -41,7 +41,7 @@
 
                 <div>
                     <label for="" class="text-gray-300 mb-1 block">Complemento</label>
-                    <input type="text" name="numero" id="numero" placeholder="Ex: casa 44, Apto 333" class="w-full border border-gray-300 rounded px-3 py-2 placeholder:text-gray-500 text-gray-300">
+                    <input type="text" name="complemento" id="complemento" placeholder="Ex: casa 44, Apto 333" class="w-full border border-gray-300 rounded px-3 py-2 placeholder:text-gray-500 text-gray-300">
                 </div>
 
                 <div>
@@ -78,7 +78,7 @@
             </div>    
         </div>
     </section>
-    
-    
+    <!-- chamada da main.js - será um modulo e fará a chamada das funções e dos arquivos js. Não terá nenhuma outra chamada de arquivo js por script, apenas importação das funções -->
+    <script type="module" src="./js/main.js"></script>
 </body>
 </html>
